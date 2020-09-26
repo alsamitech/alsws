@@ -9,12 +9,12 @@ int main(int argc, char **argv) {
 
   if ((listenfd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     err_n_die("socket error.");
-  bzero(&serveraddr, sizeof(servaddr));
+  bzero(&serveraddr, sizeof(serveraddr));
   serveraddr.sin_family   = AF_INET;
   serveraddr.sin_addr.s_addr  = htonl(INADDR_ANY);
   serveraddr.sin_port     = htons(SERVER_PORT);
 
-  if ((bind(listenfd, (SA *) &servaddr, sizeof(servaddr))) <0)
+  if ((bind(listenfd, (SA *) &serveraddr, sizeof(serveraddr))) <0)
     err_n_die("bind error.");
   if ((listen(listenfd, 10)) < 0)
     err_n_die("listen error.");
@@ -31,7 +31,15 @@ int main(int argc, char **argv) {
     while ( (n=read(connfd, recvline, MAXLINE-1) ) > 0) {
       fprintf(stdout, "\n%s\n\n%s", bin2hex(recvline, n), recvline);
 
-      if ()
+      if (recvline[n-1] == '\n') {
+        break;
+      }
+
+      memset(recvline, 0, MAXLINE);
     }
+    if (n < 0)
+      err_n_die("read error");
+    
+    snprintf((char*)buff, sizeof(buff), "HTTP/1.0 200 OK\r\n\r\nEnterCodeHere");
   }
 }
