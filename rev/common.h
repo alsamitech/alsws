@@ -26,13 +26,13 @@ char *bin2hex(const unsigned char *input, size_t len);
 
 void err_n_die(const char *fmt, ...) {
   int eerno_save;
-  var_list    ap;
-  errno_save = errno;
-  va_start(ap, fmt)
+  va_list    ap;
+  eerno_save = errno;
+  va_start(ap, fmt);
   vfprintf(stdout, fmt, ap);
   fprintf(stdout, "\n");
   fflush(stdout);
-  if (eerno_save != 0) {fprintf(stdout, "(eerno = %d) : %s\n", eerno_save, strerror(errno_save);
+  if (eerno_save != 0) {fprintf(stdout, "(eerno = %d) : %s\n", eerno_save, strerror(eerno_save));
   strerror(eerno_save); fprintf(stdout, "\n"); fflush(stdout);
   }
   va_end(ap);
