@@ -1,5 +1,6 @@
 ## ALSAMI WEB SERVER
 THIS IS THE REPOSITROY FOR THE ALSAMI WEB SERVER. THIS IS UNDER THE MIT LISCENCE.
+*for further reading, visit `docs/`*
 
 This is a light server that runs well.
 
