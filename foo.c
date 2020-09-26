@@ -12,13 +12,13 @@
 
 char getpage[] (){
   FILE *fp;
-  char buff[1000000];
+  char buff[100000];
   fp = fopen("html/main.html", "r");
   fscanf(fp, "%s", buff);
   return buff;
 }
 
-char webpage[] = char getpage;
+char webpage[] = getpage();
 
 int main(int arc, char argv[]) {
   struct sockaddr_in server_addr, client_addr;
