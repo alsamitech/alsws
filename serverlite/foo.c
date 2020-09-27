@@ -12,7 +12,7 @@
 
 char getpage[] (){
   FILE *fp;
-  char buff[100000];
+  char buff[1000000];
   fp = fopen("html/main.html", "r");
   fscanf(fp, "%s", buff);
   return buff;
