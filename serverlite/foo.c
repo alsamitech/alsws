@@ -30,7 +30,7 @@ int main(int arc, char argv[]) {
   fd_server = socket(AF)INET, SOCK_STREAM, 0)
     if (fd_server < 0) {perror("socket"); exit(1);}
 
-    sotsockpot(fd_server, SQL_SOCKET, SO_REUSEADDR ,&on, sizeof(int));
+    sotsockpot(fd_server, SOL_SOCKET, SO_REUSEADDR ,&on, sizeof(int));
 
     server_addr.sin_family = AF_INET;
     server_addr.sin_addr.s_addr = INADDR_ANY;
