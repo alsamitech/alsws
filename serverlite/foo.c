@@ -39,7 +39,7 @@ int main(int arc, char argv[]) {
     if(bind(fd_server, (struct sockaddr*) &server_addr, sizeof(server_addr)) == -1)
     {
       perror("bind");
-      close(fd_server)
+      close(fd_server);
       exit(1);
     }
 
@@ -63,10 +63,6 @@ int main(int arc, char argv[]) {
     if(!fork()) {
       /*child process*/
       close(fd_server);
-
-
-
-
     }
     /*parent process*/
     close(fd_client);
