@@ -11,6 +11,8 @@ This is a light server that runs well.
 
 **alsws** refers to a family of web servers, The basic Network server is located at `nsv/`, the HTTP server is located at `serverlite/`, and the M3 (HTTP) Server implementation is at `ws/M3P`
 
+NSV/WS has a built in auth system.
+
 The Port numbers are **MEANT** to be changed. Before compling, please change the port number to whatever port you desire. 
 
 **THIS COMES WITH NO WARRINTY WHATSOEVER ATTACHED**

@@ -35,6 +35,17 @@ void do_hof(int sock) {
       // Send back confirmation
       strcpy(buf, "200 Logged in\n");
       send(sock, buf, 1000, 0);
+    } else if (!strncmp("LAUS", buf, 4)) {
+      // Lists all users
+      strcpy(buf, "All Users\n");
+    } else if (!strncmp("ALSO", buf, 4)) {
+
+    } else if (!strncmp("ALSY", buf, 4)) {
+
+    } else {
+      // Send Error Message
+      strcpy(buf, "500 - AUTH FAILED\n");
+      send(sock, buf, strlen(buf), 0);
     }
   }
 
