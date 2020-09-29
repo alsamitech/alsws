@@ -10,11 +10,33 @@
 const int portnum = 1243;
 
 void do_hof(int sock) {
+  const int NOT_AUTH = 0;
   char buf[500];
-  strcpy(buf, "Got it!\n");
+  //strcpy(buf, "Got it!\n");
 
+  //send(sock, buf, strlen(buf), 0);
+  // send
+  strcpy(buf, "250 hi!\n");
   send(sock, buf, strlen(buf), 0);
-}
+
+  int state = NOT_AUTH;
+
+  while (1) {
+    // Wait for input from user 
+    recv(sock, buf, 1000 0);
+    if(!strncmp("NAUTH", buf, 4)) {
+      close(sock);
+      return;
+    }
+    else if (!strncmp("MEIS", buf, 4) {
+      char *username[995];
+      sscanf(buf + 5, "%s ", username);
+      printf("User is %s\n", username);
+      // Send back confirmation
+      strcpy(buf, "200 Logged in\n");
+      send(sock, buf, 1000, 0);
+    }
+  }
 
 int main(int argc, char *argv[]){
   int sockfd, newsockfd;
@@ -39,4 +61,6 @@ int main(int argc, char *argv[]){
   //hand off to function
   do_hof(newsockfd);
   close(sockfd);
+
+  return 0;
 }
