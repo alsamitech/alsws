@@ -9,6 +9,8 @@
 
 const int portnum = 1243;
 
+void complain(int sock);
+
 void do_hof(int sock) {
   const int NOT_AUTH = 0;
   char buf[500];
@@ -36,11 +38,18 @@ void do_hof(int sock) {
       strcpy(buf, "200 Logged in\n");
       send(sock, buf, 1000, 0);
     } else if (!strncmp("LAUS", buf, 4)) {
+      if (!state) {N_AUTH_COMPLAIN(sock); continue;}
       // Lists all users
       strcpy(buf, "All Users\n");
+      send(sock,buf, strlen(buf), 0);
+
+      // Display List to client
+
     } else if (!strncmp("ALSO", buf, 4)) {
+      if (!state) {N_AUTH_COMPLAIN(sock); continue;}
 
     } else if (!strncmp("ALSY", buf, 4)) {
+      if (!state) {N_AUTH_COMPLAIN(sock); continue;}
 
     } else {
       // Send Error Message
@@ -74,4 +83,10 @@ int main(int argc, char *argv[]){
   close(sockfd);
 
   return 0;
+}
+
+void N_AUTH_COMPLAIN(int sock) {
+  char buf[1000];
+  strcpy(buf, "500, Not logged in\n");
+  send(sock, buf, strlen(buf), 0);
 }
