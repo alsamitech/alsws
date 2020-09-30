@@ -1,5 +1,6 @@
 ## ALSAMI WEB SERVER
-THIS IS THE REPOSITROY FOR THE ALSAMI WEB SERVER. THIS IS UNDER THE MIT LISCENCE.
+THIS IS THE REPOSITROY FOR THE ALSAMI WEB SERVER. THIS IS UNDER THE EXPAT (MIT) LISCENCE.
+Note: this project is independent from the .als frameworks.
 *for further reading, visit `docs/`*
 
 HTTP server attached at
@@ -16,5 +17,7 @@ NSV/WS has a built in auth system.
 The Port numbers are **MEANT** to be changed. Before compling, please change the port number to whatever port you desire. 
 
 There is a simple TCP Client bundled with alsws. However, it is highly reccomended to compile the tcpclient from source
+
+the HTTP server requres a port number and a file to serve. if you dont insert those args, the program will terminate and ask you to provide than at relaunch.
 
 **THIS COMES WITH NO WARRINTY WHATSOEVER ATTACHED**
