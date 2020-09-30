@@ -15,4 +15,6 @@ NSV/WS has a built in auth system.
 
 The Port numbers are **MEANT** to be changed. Before compling, please change the port number to whatever port you desire. 
 
+There is a simple TCP Client bundled with alsws. However, it is highly reccomended to compile the tcpclient from source
+
 **THIS COMES WITH NO WARRINTY WHATSOEVER ATTACHED**

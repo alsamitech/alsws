@@ -7,6 +7,10 @@
 *.obj
 *.elf
 
+#IDE-Generated files
+*.cbp
+*.replit
+
 # Linker output
 *.ilk
 *.map
