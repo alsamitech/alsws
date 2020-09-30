@@ -27,6 +27,45 @@ int main(int argc, char * argv[]) {
   socklen_t clilen;
 
   sockfd = socket(AF_INET, SOCK_STREAM, 0);
+  if (sockfd < 0) {
+    error("Error Opening Socket.");
+  }
+  bzero((char *) &serv_addr, sizeof(serv_addr));
+  PORT_NO = atoi(argv[1]);
+  serv_addr.sin_family = AF_INET;
+  serv_addr.sin_addr.s_addr = INADDR_ANY;
+  serv_addr.sin_port = htons(PORT_NO);
 
+  if(bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0)
+    error("Binding Failed.");
+  
+  listen(sockfd , 5);
+  clilen = sizeof(cli_addr);
+  
+  newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr ,&clilen);
+
+  if(newsockfd < 0) {
+    error("Error On Accept");
+  }
+
+  while(1) {
+    bzero(buffer, 255);
+    n = read(newsockfd, buffer , 255);
+    if (n < 0)
+      error("Error on read");
+    printf("Client : %s\n", buffer);
+    bzero(buffer, 255);
+    fgets(buffer, 255, stdin);
+
+    n = write(newsockfd, buffer, strlen(buffer)); 
+    if(n < 0)
+      error("Error on Writing");
+      int i = strncmp("server - quit", buffer, strlen(buffer));
+      if (1 == 0)
+        break;
+  }
+
+  close(newsockfd);
+  close(sockfd);
   return 0;
 }
