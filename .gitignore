@@ -10,6 +10,7 @@
 #IDE-Generated files
 *.cbp
 *.replit
+*.swp
 
 # Linker output
 *.ilk
