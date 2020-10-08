@@ -17,6 +17,12 @@ _start:
 
 
 _rras:
+
+	mov rax, 41		; Moves the RAX register to 41 EQC: socket();
+	mov rdi, 2		; AF_INET
+	mov rsi,
+	syscall
+
 	; Reads file
 	mov rax, 2
 	mov rdi, file
