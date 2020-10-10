@@ -25,19 +25,28 @@
 
 
 #define CLIENTS_ALLOWED 20
-#define FAIL_EXIT_NUM 1       // Loose Numbers replaced with defines here because I don't want Yin making fun of me anymore
+#define FAIL_EXIT_NUM 1     
+// Loose Numbers replaced with defines here because I don't want Yin making fun of me anymore
 #define ret return
 
 /* HTTP STATUS CODES */
-#define OK 200                // The HTTP 200 OK success status response code indicates that the request has succeeded. A 200 response is cacheable by default.
-#define MOVEDPERMANENTLY 301  //The HyperText Transfer Protocol (HTTP) 301 Moved Permanently redirect status response code indicates that the resource requested has been definitively moved to the URL given by the Location headers. A browser redirects to this page and search engines update their links to the resource.
-#define BADREQUEST 400        // The 400 Bad Request response status code indicates that the server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
-#define FORBIDDEN 403         // The 403 Forbidden response status indicates that the server understands the request but refuses to authorize it
-#define NOTFOUND 404          // The HTTP 404 Not Found client error response code indicates that the server can't find the requested resource. 
-#define GONE 410              // The HyperText Transfer Protocol (HTTP) 410 Gone client error response code indicates that access to the target resource is no longer available at the origin server and that this condition is likely to be permanent.
-#define METHODNOTALLOWED 405  // The HyperText Transfer Protocol (HTTP) 405 Method Not Allowed response status code indicates that the request method is known by the server but is not supported by the target resource.
+#define OK 200                
+// The HTTP 200 OK success status response code indicates that the request has succeeded. A 200 response is cacheable by default.
+#define MOVEDPERMANENTLY 301  
+//The HyperText Transfer Protocol (HTTP) 301 Moved Permanently redirect status response code indicates that the resource requested has been definitively moved to the URL given by the Location headers. A browser redirects to this page and search engines update their links to the resource.
+#define BADREQUEST 400        
+// The 400 Bad Request response status code indicates that the server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
+#define FORBIDDEN 403         
+// The 403 Forbidden response status indicates that the server understands the request but refuses to authorize it
+#define NOTFOUND 404          
+// The HTTP 404 Not Found client error response code indicates that the server can't find the requested resource. 
+#define GONE 410              
+// The HyperText Transfer Protocol (HTTP) 410 Gone client error response code indicates that access to the target resource is no longer available at the origin server and that this condition is likely to be permanent.
+#define METHODNOTALLOWED 405  
+// The HyperText Transfer Protocol (HTTP) 405 Method Not Allowed response status code indicates that the request method is known by the server but is not supported by the target resource.
 #define UNSUPPORTEDMEDIATYPE 415
-#define HTTPVERSIONNOTSUPPORTED 505       // If it is using the wrong HTTP version that the server does not suppot, the server will respond with this
+#define HTTPVERSIONNOTSUPPORTED 505       
+// If it is using the wrong HTTP version that the server does not suppot, the server will respond with this
 /*Status Code Documentatin adapted from Mozilla*/
 
 int main(int argc, char argv[]) {
