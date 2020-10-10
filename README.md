@@ -14,6 +14,11 @@ This is a light server that runs well.
 
 NSV/WS has a built in auth system.
 
+Explination of ALSWS Servers:
+* ws/basenet: Sami's First webserver. Does not compile but it's a pretty cool thing to have included in the repo
+* ws/m3 The second revision of ALSWS. this revision compiles sucsesfully and compiles sucsesfully
+
+
 The Port numbers are **MEANT** to be changed. Before compling, please change the port number to whatever port you desire. 
 
 There is a simple TCP Client bundled with alsws. However, it is highly reccomended to compile the tcpclient from source
