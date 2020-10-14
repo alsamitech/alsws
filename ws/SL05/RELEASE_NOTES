@@ -1,0 +1,11 @@
+ALSWS SL05
+
+Sat, October 10 (2020)
+
+ADDED:
+	Added HTTP Status Recognition
+	Added Logging Capability in als.log (als.log is a plain ASCII text file)	
+
+
+REMOVED:
+	NONE

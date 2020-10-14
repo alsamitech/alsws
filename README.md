@@ -3,10 +3,10 @@ THIS IS THE REPOSITROY FOR THE ALSAMI WEB SERVER. THIS IS UNDER THE EXPAT (MIT) 
 Note: this project is independent from the .als frameworks.
 *for further reading, visit `docs/`*
 
-HTTP server attached at
-`serverlite/`
-TCP server attached at
-`rev/`
+`ws/` Is where all the HTTP servers are stored
+`tcp/` Is where the TCP Servers are stored
+`bin/` Is where the binaries will be stored
+`archived/` Is where unstable servers that might not have even been compiled go to rest
 
 This is a light server that runs well.
 
