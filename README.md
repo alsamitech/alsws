@@ -1,4 +1,6 @@
 ## ALSAMI WEB SERVER
+*a scalable, multithreaded family of POSIX webservers for any purpose*
+
 THIS IS THE REPOSITROY FOR THE ALSAMI WEB SERVER. THIS IS UNDER THE EXPAT (MIT) LISCENCE.
 Note: this project is independent from the .als frameworks.
 *for further reading, visit `docs/`*
