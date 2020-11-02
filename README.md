@@ -17,10 +17,16 @@ This is a light server that runs well.
 NSV/WS has a built in auth system.
 
 Explination of ALSWS Servers:
-* ws/basenet: Sami's First webserver. Does not compile but it's a pretty cool thing to have included in the repo
-* ws/m3 The second revision of ALSWS. this revision compiles sucsesfully and compiles sucsesfully
+* ws/m3 - The second revision of ALSWS. this revision compiles sucsesfully but is not extremely configurable and does not have any safety guards
+* ws/PXX - The mutlthreaded versions of AlsWS webservers.
+* ws/SLXX - The former flagship webservers, they run well, are efficient, but not extremely configurable and has numerous vunerabilities
+* nsv/ - a simple terminal alsws tcp server, but with an auth system
+* tcp/ - A basic TCP server that does not do much, but can be used as a base for TCP applications (without any mention of alsws)
 
+Configurable ALSWS Web Servers load the configuration before initalizing anything except the logging safety guards.
+In the config.h file, you can enable checking to see if (for example) 
 
+For Non-configurable versions of AlsWS: 
 The Port numbers are **MEANT** to be changed. Before compling, please change the port number to whatever port you desire. 
 
 There is a simple TCP Client bundled with alsws. However, it is highly reccomended to compile the tcpclient from source
