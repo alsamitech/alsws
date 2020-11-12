@@ -1,0 +1,48 @@
+alsws Configurable Shell
+
+Written and published Sami Alameddine, 2020
+
+While most of us are comfortable with just configuing our webservers outright, or using some kind of configuration system provided by the big servers (Apache httpd and nginx), there are some system administrators who prefer or require a interacive shell to interface with their webservers.
+Recognizing this need, I set out to make the alsws configurable shell.
+
+NOTE: Sending SIGINT via (^C) or whatever you use would (by default) would trigger a message saying that you have to use (q) to quit the alsws shell, However, (scince this is my stuff you're using) this can easily configured in the defines secion of the alsws or path more ways to handle other signals
+
+Example usage of the shell:
+#wsch
+Alsami Web Server
+</> l
+[alsws]: Logging (OFF>ON)
+[alsws]: SUCSESS
+</> c index.html
+[alsws]: Changing root page from (test.html) to (index.html)
+[alsws]: SUCSESS
+</> q
+[alsws]: Shutting down public server
+/*I would show all the shutdown states, but that would take too many lines to do in a readme*/
+[alsws]: SUCSESS
+#
+
+HTTP Implementation:
+	als/ws-imp Specifies that that all HTTP file types have to be associated with a numerical value.
+	For this project, I chose to assign these to values 1-255 (unsigned char)
+	1. text/html
+	2. style/css
+	3. text/plain
+	4. text/javascript
+	5. application/x-httpd-php
+	6. image/png
+	7. image/jpeg
+	10. application/x-sh
+
+
+
+
+
+
+THE ALSWS SHELL IS DISTRIBUTED UNDER A FEW GUIDELINES (expires 2032)
+1. WHILE YOU ARE FREE TO CONFIGURE THIS HOWEVER YOU WANT, ALSAMI ONLY CERTIFIES IT'S OWN (STOCK CERTIFIED) DISTRIBIUTIONS OF ALSWS
+2. YOU MAY NOT USE THE ALSWS SHELL IF YOU ARE ONE OF THESE WIHTOUT PRIOR OFFICIAL PERMISSION FROM SAMI ALAMEDDINE
+* ANY PUBLIC OFFICIAL OF THE COUNTRIE(S) OF THE PEOPLE'S REPUBLIC OF CHINA,OR  THE DEMOCRATIC PEOPLE'S REPUBLIC OF KOREA (aka N. Korea).
+3. YOU ARE NOT FREE TO USE THE ALSWS SHELL OR SERVER IF YOU ARE ONE OF THESE:
+* A DISTRIBUTOR OF ILLIGAL SUBTANCES
+* A ORGANAZATION THAT VIOLATES THE SALAMEDDINE/MORAL GUIDELINES

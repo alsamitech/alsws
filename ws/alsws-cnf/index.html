@@ -1,0 +1,73 @@
+<!--
+	HTML AND CSS TEMPLATE  BY SAMI
+	This is public domain software
+-->
+
+<style>
+	*{padding:0;margin:0;}
+	body{
+		background-image: url(background.png);
+		background-size:cover;
+		background-position: center;
+		box-sizing: border-box;
+		font-family: Ubuntu, Verdana, Helvetica, Arial, Roboto, 'Consolas', 'Segoe UI', sans-serif;
+	}
+	.menubar{
+		background-color: lightgray;
+		text-align: center;
+	}
+	.menubar ul{
+		display: inline-flex;
+		list-style: none;
+		color: white;
+	}
+	.menubar ul li{
+		width: 120px;
+		margin: 10px;
+		padding: 10px;
+	}
+	.menubar ul li a{
+		text-decoration: none;
+		color: #ffffff;
+	}
+	.active, .menubar ul li:hover{
+		background: darkgray;
+		border-radius: 3px;
+	}
+	.submenu1{display: none;}
+	.menubar ul li:hover .submenu1{
+		display:block;
+		position: absolute;
+		background: lightgray;
+		margin-top: 15px;
+		margin-left: -15px;
+	}
+</style>
+
+<html>
+	<head>
+		<title>Menu Template</title>
+	</head>
+	<body>
+		<div class="menubar">
+		<ul>
+			<li class="active"><a href="index.html">Home</a></li>
+			<li><a href="about.html">About Us</a></li>
+				<div class="submenu1">
+					<ul>
+					<li><a href="mission.html">Mission</a></li>
+					<li><a href="vision.html">Vision</a></li>
+					<li><a href="mission.html">Mission</a></li>
+					<li><a href="team.html">Team</a></li>
+					</ul>
+				</div>
+			<li><a href="services.html">Services</a></li>
+			<li><a href="clients.html">Clients</a></li>
+			<li><a href="investors.html">Investors</a></li>
+			<li><a href="pricicng.html">Pricing</li>
+			<li><a href="training.html">Training</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+		</div>
+	</body>
+</html>
