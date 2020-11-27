@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Usage of the script: ./build <compiler>
+
+# NeWeR webserver build script (Yes, it uses sh as it's build system)
+CC=$1
+TARGET=alsws
+SOURCE=nwr.c
+CFLAGS=-Os
+
+$CC -o $TARGET $SOURCE $CFLAGS
