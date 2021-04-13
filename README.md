@@ -1,4 +1,4 @@
-## ALSAMI WEB SERVER
+## alsws - alsami web servers
 *a scalable, multithreaded family of POSIX webservers for any purpose*
 
 THIS IS THE REPOSITROY FOR THE ALSAMI WEB SERVER. THIS IS UNDER THE EXPAT (MIT) LISCENCE.
@@ -8,9 +8,7 @@ Note: this project is independent from the .als frameworks.
 `ws/` Is where all the HTTP servers are stored
 `tcp/` Is where the TCP Servers are stored
 `bin/` Is where the binaries will be stored
-`archived/` Is where unstable servers that might not have even been compiled go to rest
-
-This is a light server that runs well.
+`archived/` Is where unstable servers that might not have even been compiled go to rest. Fix if you want.
 
 **alsws** refers to a family of web servers, The basic Network server is located at `nsv/`, the HTTP server is located at `serverlite/`, and the M3 (HTTP) Server implementation is at `ws/M3P`
 

@@ -23,7 +23,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-
+// backlog
 #define CLIENTS_ALLOWED 20
 #define FAIL_EXIT_NUM 1     
 // Loose Numbers replaced with defines here because I don't want Yin making fun of me anymore
@@ -51,6 +51,10 @@
 
 int main(int argc, char argv[]) {
 	
+  if(argc<3){
+    printf("Usage: %s <portno> <logfile>\n", argv[0]);
+    return 0;
+  }
 	// Parse the command line args
 	/*if(argc && *argv == NULL) {
 		perror("Error: You Did not enter argc or argv!!!\nUsage: ./executable portnum file");		// Essentially, if argc and argv are NULL, that means that the user did not enter those arguments, so this if statment will check if it's null, if it is, it would print out the error message and exit with the value specified in the FAIL_EXIT_NUM define
@@ -61,14 +65,14 @@ int main(int argc, char argv[]) {
 	} else if(*argv == NULL) {
 		perror("Error: You did not enter argv\nArgument Usage: ./executable portnum file");		// checks if argc is equal to NULL, if it is, it juust prints owt the error and dies
 	} excluded for now*/
-	int SERVER_PORT = argc;
+	int SERVER_PORT = atoi(argv[1]);
 
 
 	struct sockaddr_in server_addr, client_addr;
 	socklen_t sin_len = sizeof(client_addr);
 	int fd_server, fd_client; // declares server variables
 
-	char buf[2048];		// This stores whatever the client decides to send back to the server
+	char buf[4096];		// This stores whatever the client decides to send back to the server
 
 	int fdimg;		// Holds general image media, ie favicons and images
 	int on = 1;
@@ -121,6 +125,7 @@ int main(int argc, char argv[]) {
 		printf("Got Client connection...\n");
 
 
+    frc = fopen(argv[2], "w+");
 		// The child process will return 0, the parent process would recive the child's process ID.
 		if(!fork()) {
 			/*child process*/
@@ -132,9 +137,7 @@ int main(int argc, char argv[]) {
 			printf("%s\n", buf);		// Pritns the content of the buffer, what the browser sent
       FILE *frc;
 
-      frc = fopen("als.log", "w+");
       fprintf(frc, "ALSAMI SERVER LOG\n%s\n", buf);
-      fclose(frc);
 
       FILE *f = fopen(argv, "rb");
       fseek(f, 0, SEEK_END);
@@ -152,6 +155,7 @@ int main(int argc, char argv[]) {
 			// -1 to remove one of the null icons
 		}
 		/*parent process*/
+    fclose(frc);
 		close(fd_client);
 	
 	}
